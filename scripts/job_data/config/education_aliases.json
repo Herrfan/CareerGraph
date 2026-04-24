@@ -1,0 +1,9 @@
+{
+  "大专": "college",
+  "专科": "college",
+  "本科": "bachelor",
+  "学士": "bachelor",
+  "硕士": "master",
+  "研究生": "master",
+  "博士": "doctor"
+}

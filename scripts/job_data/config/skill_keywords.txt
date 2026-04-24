@@ -1,0 +1,23 @@
+# one skill per line
+Java
+Spring
+Spring Boot
+MySQL
+Redis
+Kafka
+Python
+Django
+Flask
+JavaScript
+TypeScript
+Vue
+React
+Node.js
+Linux
+Docker
+Kubernetes
+SQL
+Postman
+Selenium
+JMeter
+Excel

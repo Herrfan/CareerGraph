@@ -1,0 +1,21 @@
+{
+  "total" : 200,
+  "valid" : 154,
+  "rejected" : 46,
+  "review" : 13,
+  "empty_city" : 0,
+  "empty_education" : 94,
+  "empty_experience" : 158,
+  "top_rejection_reasons" : [ [ "non_digital_job", 46 ] ],
+  "category_distribution" : {
+    "前端开发" : 15,
+    "实施工程师" : 28,
+    "Java开发" : 31,
+    "软件测试" : 39,
+    "科研人员" : 6,
+    "C/C++开发" : 11,
+    "硬件测试" : 12,
+    "技术支持工程师" : 12
+  },
+  "generated_at" : "2026-04-19T11:15:05.805357500"
+}

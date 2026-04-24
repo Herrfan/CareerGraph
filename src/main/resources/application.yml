@@ -1,0 +1,74 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: career-agent
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/career_agent?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:123456}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  neo4j:
+    uri: ${SPRING_NEO4J_URI:bolt://localhost:7687}
+    authentication:
+      username: ${SPRING_NEO4J_AUTHENTICATION_USERNAME:neo4j}
+      password: ${SPRING_NEO4J_AUTHENTICATION_PASSWORD:12345678}
+  data:
+    neo4j:
+      database: neo4j
+  ai:
+    retry:
+      max-attempts: 0
+      on-client-errors: false
+      backoff:
+        initial-interval: 200ms
+        max-interval: 1s
+        multiplier: 2
+    openai:
+      chat:
+        enabled: true
+        options:
+          model: ${SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL:moonshot-v1-32k}
+      api-key: ${SPRING_AI_OPENAI_API_KEY:}
+      base-url: ${SPRING_AI_OPENAI_BASE_URL:https://api.moonshot.cn}
+      embedding:
+        enabled: false
+    ollama:
+      chat:
+        enabled: true
+      embedding:
+        enabled: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+ollama:
+  base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+  embedding:
+    model: ${OLLAMA_EMBEDDING_MODEL:nomic-embed-text}
+  chat:
+    model: ${OLLAMA_CHAT_MODEL:qwen3:8b}
+
+app:
+  graph:
+    bootstrap-on-startup: ${APP_GRAPH_BOOTSTRAP_ON_STARTUP:false}
+  auth:
+    session-days: ${APP_AUTH_SESSION_DAYS:30}
+  admin:
+    username: ${APP_ADMIN_USERNAME:admin}
+    password: ${APP_ADMIN_PASSWORD:admin123}
+  job-cleanup:
+    llm-enabled: ${APP_JOB_CLEANUP_LLM_ENABLED:true}

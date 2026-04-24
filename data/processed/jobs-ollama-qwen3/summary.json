@@ -1,0 +1,19 @@
+{
+  "total" : 10,
+  "valid" : 10,
+  "rejected" : 0,
+  "review" : 1,
+  "top_rejection_reasons" : [ ],
+  "category_distribution" : {
+    "前端开发" : 1,
+    "实施工程师" : 2,
+    "科研人员" : 3,
+    "技术支持工程师" : 2,
+    "Java开发" : 1,
+    "软件测试" : 1
+  },
+  "clean_source_distribution" : {
+    "ollama_qwen3_single_v2" : 10
+  },
+  "generated_at" : "2026-04-18T23:25:46.921163500"
+}

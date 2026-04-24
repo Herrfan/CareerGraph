@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+
+  /* Primary Colors */
+  --primary-blue: #0A66C2;
+  --accent-orange: #FF7A45;
+  --accent-purple: #7C3AED;
+  --accent-cyan: #06B6D4;
+
+  /* Backgrounds */
+  --bg-canvas: linear-gradient(135deg, #F9FAFB 0%, #EEF2FF 50%, #F0F9FF 100%);
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-glass: rgba(255, 255, 255, 0.75);
+  --bg-muted: oklch(0.978 0.004 244);
+  --bg-subtle: oklch(0.952 0.007 244);
+  --bg-accent-soft: oklch(0.935 0.014 245);
+
+  /* Accent Backgrounds */
+  --bg-orange-soft: #FFF2E5;
+  --bg-orange-hover: #FFE5D0;
+  --bg-purple-soft: #F3F0FF;
+  --bg-cyan-soft: #ECFEFF;
+
+  /* Text Colors */
+  --text-primary: oklch(0.275 0.014 255);
+  --text-secondary: oklch(0.435 0.012 250);
+  --text-muted: oklch(0.59 0.01 248);
+  --text-orange: #FF7A45;
+
+  /* Brand Colors */
+  --brand-500: #0A66C2;
+  --brand-600: #084F98;
+  --brand-700: #063A70;
+
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(135deg, #0A66C2 0%, #7C3AED 100%);
+  --gradient-accent: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+
+  /* Status Colors */
+  --success-500: oklch(0.56 0.095 158);
+  --warning-500: oklch(0.72 0.105 84);
+  --danger-500: oklch(0.56 0.13 28);
+
+  /* Borders */
+  --border-subtle: oklch(0.892 0.008 244);
+  --border-strong: oklch(0.775 0.02 244);
+  --border-orange: #FFB89A;
+  --border-glass: rgba(255, 255, 255, 0.6);
+
+  /* Shadows */
+  --shadow-soft: 0 18px 44px color-mix(in oklab, var(--brand-700) 6%, transparent);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-orange: 0 4px 16px rgba(255, 122, 69, 0.15);
+  --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.15);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --container-xl: 1360px;
+  --transition-base: 180ms ease;
+  --transition-smooth: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-sans: "Segoe UI Variable", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI Variable", "PingFang SC", "Microsoft YaHei", sans-serif;
+}

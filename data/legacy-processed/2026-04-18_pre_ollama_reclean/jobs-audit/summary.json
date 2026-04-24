@@ -1,0 +1,27 @@
+{
+  "total" : 9958,
+  "valid" : 7144,
+  "rejected" : 2814,
+  "review" : 211,
+  "empty_city" : 0,
+  "empty_education" : 5099,
+  "empty_experience" : 7457,
+  "top_rejection_reasons" : [ [ "non_digital_job", 2814 ] ],
+  "category_distribution" : {
+    "前端开发" : 283,
+    "实施工程师" : 701,
+    "科研人员" : 501,
+    "技术支持工程师" : 825,
+    "Java开发" : 602,
+    "软件测试" : 1217,
+    "C/C++开发" : 580,
+    "硬件测试" : 321,
+    "APP推广/运营" : 917,
+    "综合开发" : 727,
+    "数据分析" : 147,
+    "运维/DevOps" : 104,
+    "产品/项目经理" : 204,
+    "算法工程师" : 15
+  },
+  "generated_at" : "2026-04-18T17:36:28.796375"
+}

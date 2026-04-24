@@ -1,0 +1,13 @@
+{
+  "source_id": ["source_id", "id", "职位id", "岗位id"],
+  "company_name": ["company_name", "company", "公司", "企业名称"],
+  "job_title": ["job_title", "title", "岗位名称", "职位名称", "职位"],
+  "city": ["city", "城市", "工作地点", "地点"],
+  "salary_text": ["salary", "薪资", "薪资范围", "工资"],
+  "education_level": ["education", "学历", "学历要求"],
+  "experience_text": ["experience", "经验", "工作经验", "经验要求"],
+  "job_description": ["job_description", "description", "职位描述", "岗位职责", "职位详情"],
+  "source_url": ["source_url", "url", "链接", "职位链接"],
+  "industry": ["industry", "行业", "所属行业"],
+  "published_at": ["published_at", "发布时间", "发布日期"]
+}
