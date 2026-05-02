@@ -1,0 +1,12 @@
+.git
+.gitignore
+target/
+frontend/
+node_modules/
+.DS_Store
+.env
+*.md
+!README.md
+data/
+docs/
+scripts/

@@ -1,0 +1,43 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  career-agent:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'Career Agent Plus Backend Service'
+      InternetAccess: true
+      Role: 'acs:ram::<account-id>:role/aliyunfcdefaultrole'
+    career-agent-function:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: custom-container
+        CodeUri: ./
+        Description: 'Career Agent Plus Backend'
+        MemorySize: 2048
+        Timeout: 300
+        EnvironmentVariables:
+          SPRING_DATASOURCE_URL: 'jdbc:mysql://<your-rds-endpoint>:3306/career_agent?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true'
+          SPRING_DATASOURCE_USERNAME: '<db-username>'
+          SPRING_DATASOURCE_PASSWORD: '<db-password>'
+          SPRING_NEO4J_URI: 'neo4j+s://f6954adc.databases.neo4j.io'
+          SPRING_NEO4J_AUTHENTICATION_USERNAME: 'f6954adc'
+          SPRING_NEO4J_AUTHENTICATION_PASSWORD: '8tfth2-tkHvvCXqwMQ5OdIxnwfVe-Z4J_zXrlX1SP7Q'
+          SPRING_AI_OPENAI_API_KEY: 'sk-pg7I06zOGBZsfsEC9q9YPOtJtGwnR8hHpPdLzUrgVRzPrAkk'
+          SPRING_AI_OPENAI_BASE_URL: 'https://api.moonshot.cn'
+          SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL: 'moonshot-v1-8k'
+        CustomContainerConfig:
+          Image: '<your-acr-repo>/career-agent:latest'
+          Command: '["java", "-jar", "app.jar"]'
+          Args: '[]'
+          Port: 8080
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: anonymous
+            Methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE

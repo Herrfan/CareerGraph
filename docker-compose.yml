@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: career-agent-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: career_agent
+      MYSQL_USER: career
+      MYSQL_PASSWORD: career123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - career-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: career-agent-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/career_agent?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root123456
+      SPRING_NEO4J_URI: neo4j+s://f6954adc.databases.neo4j.io
+      SPRING_NEO4J_AUTHENTICATION_USERNAME: f6954adc
+      SPRING_NEO4J_AUTHENTICATION_PASSWORD: 8tfth2-tkHvvCXqwMQ5OdIxnwfVe-Z4J_zXrlX1SP7Q
+      SPRING_AI_OPENAI_API_KEY: sk-pg7I06zOGBZsfsEC9q9YPOtJtGwnR8hHpPdLzUrgVRzPrAkk
+      SPRING_AI_OPENAI_BASE_URL: https://api.moonshot.cn
+      SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL: moonshot-v1-8k
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - career-network
+
+volumes:
+  mysql-data:
+
+networks:
+  career-network:
+    driver: bridge
